@@ -22,7 +22,7 @@ $a(\eta)=-\log {(1-\phi)} = \log {(1+\exp(\eta))}$
 
 Now $h_\theta(x)$ follows from $h_\theta(x)= E[y|x;\theta]$.  
 $h_\theta(x)= E[y|x;\theta]=\phi=\frac{1}{1-\exp(\eta)}$  
-$h_\theta(x)=\frac{1}{1-\exp(\theta^Tx)}$
+$h_\theta(x)=\frac{1}{1-\exp(\theta^Tx)} = \frac{1}{1+\exp(-\theta^Tx)}$
 
 To adjust the parameters $\theta$ we can maximize the Likelihood $L(\theta)=p(\vec{y}|X;\theta)=\prod_{i=1}^{m} p(y^{(i)}|x^{(i)};\theta)$ with gradient descent.  
 Since the $log$-function is strictly increasing we can also maximize this, to make the algebra a bit easier.  
