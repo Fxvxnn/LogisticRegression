@@ -16,9 +16,9 @@ $p(y;\phi)=\exp(y \log {\frac{\phi}{1-\phi}} + \log {(1-\phi)})$
 
 From this we can see  
 $b(y)=1$  
-$\eta=\log {\frac{\phi}{1-\phi}}$  
+$\eta=\log {\frac{\phi}{1-\phi}} \Leftrightarrow \phi = \frac{1}{1-\exp(\eta)}$  
 $T(y)=y$  
-$a(\eta)=-\log {(1-\phi)}$
+$a(\eta)=-\log {(1-\phi)} = -\log {(1+\exp(\eta))}$
 
 Now $h_\theta(x)$ follows from $h_\theta(x)= E[y|x;\theta]$.  
 $h_\theta(x)= E[y|x;\theta]=\mu=\eta$  
