@@ -24,6 +24,8 @@ Now $h_\theta(x)$ follows from $h_\theta(x)= E[y|x;\theta]$.
 $h_\theta(x)= E[y|x;\theta]=\phi=\frac{1}{1-\exp(\eta)}$  
 $h_\theta(x)=\frac{1}{1-\exp(\theta^Tx)} = \frac{1}{1+\exp(-\theta^Tx)}$
 
+$g(z) = \frac{1}{1+\exp(z)} $ is the sigmoid function, which has the property $g'(z) = g(z) * (1-g(z))$.  
+
 To adjust the parameters $\theta$ we can maximize the Likelihood $L(\theta)=p(\vec{y}|X;\theta)=\prod_{i=1}^{m} p(y^{(i)}|x^{(i)};\theta)$ with gradient descent.  
 Since the $log$-function is strictly increasing we can also maximize this, to make the algebra a bit easier.  
 $l(\theta)=\log(L(\theta))=\sum_{i=1}^{m} \log(p(y^{(i)}|x^{(i)};\theta))$  
