@@ -29,8 +29,9 @@ $g(z) = \frac{1}{1+\exp(z)}$ is the sigmoid function, which has the property $g'
 To adjust the parameters $\theta$ we can maximize the Likelihood $L(\theta)=p(\vec{y}|X;\theta)=\prod_{i=1}^{m} p(y^{(i)}|x^{(i)};\theta)$ with gradient descent.  
 Since the $log$-function is strictly increasing we can also maximize this, to make the algebra a bit easier.  
 $l(\theta)=\log(L(\theta))=\sum_{i=1}^{m} \log(p(y^{(i)}|x^{(i)};\theta))$  
-$l(\theta)=\sum_{i=1}^{m} \log(\frac{1}{\sqrt{2\pi}\sigma}exp(-\frac{1}{2\sigma^2}(y^{(i)}-\theta^Tx^{(i)})^2))=m\log(\frac{1}{\sqrt{2\pi}\sigma})-\frac{1}{\sigma^2}*\frac{1}{2}\sum_{i=1}^{m}(y^{(i)}-\theta^Tx^{(i)})^2$  
-From there we see, that the choice of $\theta$ doesn't depend on $\sigma$. Additional we see, maximizing $l(\theta)$ gives the same results as minimizing $\frac{1}{2}\sum_{i=1}^{m}(y^{(i)}-\theta^Tx^{(i)})^2$ which I define as my Cost-function $J(\theta)$.  
+$l(\theta)=\sum_{i=1}^{m} \log((\frac{1}{1+\exp(-\theta^Tx^{i})})^{y^{i}} * (1-\frac{1}{1+\exp(-\theta^Tx^{i})})^{1-y^{i}}) = \sum_{i=1}^{m} y^{i}* \log(g(\theta^Tx^{i})) + \(1-y^{i}) * \log(1-g(\theta^Tx^{i}))$  
+
+So $l(\theta)$ is our Costfunction $J(\theta)$, which we are trying to minimze.
 
 Gradient Descent works by adjusting the paramters in the steepest direction. The update-rule says $\theta_j \leftarrow \theta_j + \alpha \frac{\partial}{\partial \theta_j} J(\theta)$ with $\alpha$ being the learning rate.  
 
