@@ -36,9 +36,9 @@ So $l(\theta)$ is our Costfunction $J(\theta)$, which we are trying to minimze.
 Gradient Descent works by adjusting the paramters in the steepest direction. The update-rule says $\theta_j \leftarrow \theta_j + \alpha \frac{\partial}{\partial \theta_j} J(\theta)$ with $\alpha$ being the learning rate.  
 
 I will derive the Update-rule with a single training example and then modify it for multiple.  
-$\frac{\partial}{\partial \theta_j} J(\theta) = \frac{\partial}{\partial \theta_j} \frac{1}{2} (y-\theta^Tx)^2 = \frac{\partial}{\partial \theta_j} \frac{1}{2} (h_\theta(x)-y)^2$  
-$\frac{\partial}{\partial \theta_j} J(\theta) = (h_\theta(x)-y) * \frac{\partial}{\partial \theta_j} (h_\theta(x)-y) = (h_\theta(x)-y) * \frac{\partial}{\partial \theta_j} (\sum_{i=0}\theta_i^Tx_i -y)$  
-$\frac{\partial}{\partial \theta_j} J(\theta) = (h_\theta(x)-y)x_j$
+$\frac{\partial}{\partial \theta_j} J(\theta) = \frac{\partial}{\partial \theta_j} y* \log(g(\theta^Tx)) + \(1-y) * \log(1-g(\theta^Tx))$    
+$\frac{\partial}{\partial \theta_j} J(\theta) = \frac{y}{g(\theta^Tx)*\frac{\partial}{\partial \theta_j} g(\theta^Tx) - \frac{1-y}{1-g(\theta^Tx)} * \frac{\partial}{\partial \theta_j} g(\theta^Tx)}$  
+$\frac{\partial}{\partial \theta_j} J(\theta) = (y * (1-g(\theta^Tx) - (1-y) * g(\theta^Tx))) * \frac{\partial}{\partial \theta_j} \theta^Tx = (y-g(\theta^Tx)) * x_j$  
 
 For multiple training examples we can use either Batch Gradient Descent (BGD), by looking on every example for one step or we can use Stochastic Gradient Ascent (SGD) by adjusting the paremeters for every example.  
 BGD: $\theta_j \leftarrow \theta_j + \alpha \sum_{i=1}^{m} (h_\theta(x^{(i)})-y^{(i)})x_j$ (for every $j$)  
