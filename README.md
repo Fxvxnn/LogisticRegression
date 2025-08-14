@@ -9,7 +9,7 @@ Since our targets are either 0 or 1, we can use the Bernoulli-distrubution. Beca
 
 For the Bernoulli-distrubution holds:  
 $p(y; \phi)=\phi^y * (1-\phi)^{1-y}$  
-$p(y;\mu)=\frac{1}{\sqrt{2\pi}}exp(-\frac{1}{2}y^2)*exp(\mu y-\frac{1}{2}\mu^2)$
+$p(y;\phi)=\exp(y \log \phi + (1-y) \log (1-\phi))$
 
 From this we can see  
 $b(y)=\frac{1}{\sqrt{2\pi}}exp(-\frac{1}{2}y^2)$  
