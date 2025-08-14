@@ -41,8 +41,8 @@ $\frac{\partial}{\partial \theta_j} J(\theta) = \frac{y}{g(\theta^Tx)}*\frac{\pa
 $\frac{\partial}{\partial \theta_j} J(\theta) = (y * (1-g(\theta^Tx) - (1-y) * g(\theta^Tx))) * \frac{\partial}{\partial \theta_j} \theta^Tx = (y-g(\theta^Tx)) * x_j$  
 
 For multiple training examples we can use either Batch Gradient Descent (BGD), by looking on every example for one step or we can use Stochastic Gradient Ascent (SGD) by adjusting the paremeters for every example.  
-BGD: $\theta_j \leftarrow \theta_j + \alpha \sum_{i=1}^{m} (h_\theta(x^{(i)})-y^{(i)})x_j$ (for every $j$)  
-SGD: for $i=1$ to $m$ { $\theta_j \leftarrow \theta_j + \alpha (h_\theta(x^{(i)})-y^{(i)})x_j$ (for every $j$) }
+BGD: $\theta_j \leftarrow \theta_j + \alpha \sum_{i=1}^{m} (y^{(i)}-h_\theta(x^{(i)}))x_j$ (for every $j$)  
+SGD: for $i=1$ to $m$ { $\theta_j \leftarrow \theta_j + \alpha (y^{(i)}-h_\theta(x^{(i)}))x_j$ (for every $j$) }
 
 
 (Source: https://www.youtube.com/playlist?list=PLoROMvodv4rMiGQp3WXShtMGgzqpfVfbU)
