@@ -15,10 +15,10 @@ $p(y;\phi)=\exp(y \log {\frac{\phi}{1-\phi}} + \log {(1-\phi)})$
 
 
 From this we can see  
-$b(y)=\frac{1}{\sqrt{2\pi}}exp(-\frac{1}{2}y^2)$  
-$\eta=\mu$  
+$b(y)=1$  
+$\eta=\log {\frac{\phi}{1-\phi}}$  
 $T(y)=y$  
-$a(\eta)=\frac{\mu^2}{2}=\frac{\eta^2}{2}$
+$a(\eta)=-\log {(1-\phi)}$
 
 Now $h_\theta(x)$ follows from $h_\theta(x)= E[y|x;\theta]$.  
 $h_\theta(x)= E[y|x;\theta]=\mu=\eta$  
